@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import WeatherIfo from "./Weatherinfo";
+import WeatherInfo from "./Weatherinfo";
 import axios from "axios";
 import "./Weather.css";
 
@@ -13,7 +13,7 @@ export default function Weather(props) {
       humidity: response.data.main.humidity,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       city: response.data.name,
     });
@@ -26,7 +26,7 @@ export default function Weather(props) {
   }
 
   function handleSubmit(event) {
-    event.preventDafualt();
+    event.preventDefualt();
     search();
   }
 
@@ -57,7 +57,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherIfo data={weatherData} />
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {

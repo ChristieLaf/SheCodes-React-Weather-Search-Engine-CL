@@ -28,8 +28,8 @@
   list-style: none;
 }
 
-.Weather img {
-  height: 64px;
+.Weather canvas {
+  height: 40px;
   margin-right: 10px;
 }
 
